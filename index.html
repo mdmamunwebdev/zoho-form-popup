@@ -440,78 +440,78 @@
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    var formSubmit = document.getElementById("formSubmit");
-    var closePopup = document.getElementById("closePopup");
-    var myPopup = document.getElementById("myPopup");
-
-    formSubmit.addEventListener("submit", function(event) {
-        event.preventDefault();
-        if (checkMandatoryFields()) {
-            showPopup();
-        }
-    });
-
-    closePopup.addEventListener("click", function () {
-        hidePopup();
-        formSubmit.submit();
-    });
-
-    window.addEventListener("click", function (event) {
-        if (event.target == myPopup) {
-            hidePopup();
-            formSubmit.submit();
-        }
-    });
-
-    function checkMandatoryFields() {
-        var mandatoryFields = ['First Name', 'Last Name', 'Email', 'LEADCF1', 'LEADCF2', 'LEADCF6', 'LEADCF7'];
-        var fieldLabels = ['First Name', 'Last Name', 'Email', 'How can Monx help you?', 'Why would you like to contact us today?', 'How did you hear about us', 'Choose your location'];
-
-        for (var i = 0; i < mandatoryFields.length; i++) {
-            var fieldName = mandatoryFields[i];
-            var fieldObj = document.forms['WebToLeads4800337000002665345'][fieldName];
-
-            if (!fieldObj || !isFieldValid(fieldObj, i, fieldLabels)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    function isFieldValid(fieldObj, index, fieldLabels) {
-        var fieldValue = fieldObj.value.trim();
-
-        if (fieldObj.type === 'file' && fieldValue === '') {
-            alert('Please select a file to upload.');
-            fieldObj.focus();
-            return false;
-        } else if (fieldObj.nodeName === 'SELECT' && fieldObj.options[fieldObj.selectedIndex].value === '-None-') {
-            alert('Please select a value for ' + fieldLabels[index] + '.');
-            fieldObj.focus();
-            return false;
-        } else if (fieldObj.type === 'checkbox' && !fieldObj.checked) {
-            alert('Please accept ' + fieldLabels[index]);
-            fieldObj.focus();
-            return false;
-        } else if (fieldValue === '') {
-            alert(fieldLabels[index] + ' cannot be empty.');
-            fieldObj.focus();
-            return false;
-        }
-
-        return true;
-    }
-
-    function showPopup() {
-        myPopup.classList.add("show");
-    }
-
-    function hidePopup() {
-        myPopup.classList.remove("show");
-    }
-});
+	document.addEventListener("DOMContentLoaded", function() {
+	    var formSubmit = document.getElementById("formSubmit");
+	    var closePopup = document.getElementById("closePopup");
+	    var myPopup = document.getElementById("myPopup");
+	
+	    formSubmit.addEventListener("submit", function(event) {
+	        event.preventDefault();
+	        if (checkMandatoryFields()) {
+	            showPopup();
+	        }
+	    });
+	
+	    closePopup.addEventListener("click", function () {
+	        hidePopup();
+	        formSubmit.submit();
+	    });
+	
+	    window.addEventListener("click", function (event) {
+	        if (event.target == myPopup) {
+	            hidePopup();
+	            formSubmit.submit();
+	        }
+	    });
+	
+	    function checkMandatoryFields() {
+	        var mandatoryFields = ['First Name', 'Last Name', 'Email', 'LEADCF1', 'LEADCF2', 'LEADCF6', 'LEADCF7'];
+	        var fieldLabels = ['First Name', 'Last Name', 'Email', 'How can Monx help you?', 'Why would you like to contact us today?', 'How did you hear about us', 'Choose your location'];
+	
+	        for (var i = 0; i < mandatoryFields.length; i++) {
+	            var fieldName = mandatoryFields[i];
+	            var fieldObj = document.forms['WebToLeads4800337000002665345'][fieldName];
+	
+	            if (!fieldObj || !isFieldValid(fieldObj, i, fieldLabels)) {
+	                return false;
+	            }
+	        }
+	
+	        return true;
+	    }
+	
+	    function isFieldValid(fieldObj, index, fieldLabels) {
+	        var fieldValue = fieldObj.value.trim();
+	
+	        if (fieldObj.type === 'file' && fieldValue === '') {
+	            alert('Please select a file to upload.');
+	            fieldObj.focus();
+	            return false;
+	        } else if (fieldObj.nodeName === 'SELECT' && fieldObj.options[fieldObj.selectedIndex].value === '-None-') {
+	            alert('Please select a value for ' + fieldLabels[index] + '.');
+	            fieldObj.focus();
+	            return false;
+	        } else if (fieldObj.type === 'checkbox' && !fieldObj.checked) {
+	            alert('Please accept ' + fieldLabels[index]);
+	            fieldObj.focus();
+	            return false;
+	        } else if (fieldValue === '') {
+	            alert(fieldLabels[index] + ' cannot be empty.');
+	            fieldObj.focus();
+	            return false;
+	        }
+	
+	        return true;
+	    }
+	
+	    function showPopup() {
+	        myPopup.classList.add("show");
+	    }
+	
+	    function hidePopup() {
+	        myPopup.classList.remove("show");
+	    }
+	});
 
 
 </script>
