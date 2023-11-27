@@ -10,19 +10,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <META HTTP-EQUIV='content-type' CONTENT='text/html;charset=UTF-8'>
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-	
-    <div id="myPopup" class="popup">
-        <div class="popup-content">
-            <h1 style="color:green;">
-                  DONE !
-              </h1>
-            <p>This is a popup box!</p>
-            <button id="closePopup">
-                  Close
-            </button>
-        </div>
-    </div>
-	
     <form id="formSubmit" action='https://crm.zoho.com/crm/WebToLeadForm' name='WebToLeads4800337000002665345' method='POST'  accept-charset='UTF-8'>
         <input type='text' style='display:none;' name='xnQsjsdp' value='0baee1500f3e64cc916fa078b5eb11d73de60d757fce6c65907ba2f328f88598'>
         <input type='hidden' name='zc_gad' id='zc_gad' value=''>
@@ -435,6 +422,13 @@
                 <input type='reset' class='zcwf_button' name='reset' value='Reset' title='Reset'>
             </div>
         </div>
+	    
+	<div class='zcwf_row'>
+            <div class='zcwf_col_lab'></div>
+            <div class='zcwf_col_fld success' id="success-msg">
+                ✓ Your submission was successfull.
+            </div>
+        </div>    
     </form>
 </div>
 
@@ -442,28 +436,18 @@
 
 	document.addEventListener("DOMContentLoaded", function() {
 	    var formSubmit = document.getElementById("formSubmit");
-	    var closePopup = document.getElementById("closePopup");
-	    var myPopup = document.getElementById("myPopup");
+	    var myPopup = document.getElementById("success-msg");
 	
 	    formSubmit.addEventListener("submit", function(event) {
 	        event.preventDefault();
 	        if (checkMandatoryFields()) {
 	            showPopup();
+		    setTimeout(function() {
+		    	formSubmit.submit();
+		    }, 5000); // 5000 milliseconds = 5 seconds
 	        }
 	    });
-	
-	    closePopup.addEventListener("click", function () {
-	        hidePopup();
-	        formSubmit.submit();
-	    });
-	
-	    window.addEventListener("click", function (event) {
-	        if (event.target == myPopup) {
-	            hidePopup();
-	            formSubmit.submit();
-	        }
-	    });
-	
+
 	    function checkMandatoryFields() {
 	        var mandatoryFields = ['First Name', 'Last Name', 'Email', 'LEADCF1', 'LEADCF2', 'LEADCF6', 'LEADCF7'];
 	        var fieldLabels = ['First Name', 'Last Name', 'Email', 'How can Monx help you?', 'Why would you like to contact us today?', 'How did you hear about us', 'Choose your location'];
@@ -508,9 +492,6 @@
 	        myPopup.classList.add("show");
 	    }
 	
-	    function hidePopup() {
-	        myPopup.classList.remove("show");
-	    }
 	});
 
 
