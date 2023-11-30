@@ -21,10 +21,11 @@ input[type=text], select, textarea {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.5s;	
 }
 
 #formSubmitBtn:hover, #formResetBtn:hover {
-  background-color: #F57E1F;
+  background-color: #DB7828;
 }
 
 .container {
