@@ -1,3 +1,40 @@
+/* My Custom Code Start */
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+#formSubmitBtn, #formResetBtn {
+  background-color: #F57E1F;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#formSubmitBtn:hover, #formResetBtn:hover {
+  background-color: #F57E1F;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+
 .success {
 	display: none;
 }
@@ -9,7 +46,7 @@ h1 {
 	color: black;
 }
 
-
+/* My Custom code End */
 
 
 #crmWebToEntityForm.zcwf_lblLeft {
@@ -40,28 +77,32 @@ h1 {
     color: #f57e1f !important;
 }
 
-.zcwf_lblLeft input[type=text],
-.zcwf_lblLeft textarea {
-    width: 100% !important;
+.zcwf_lblLeft input[type=text]
+{
+	/*.zcwf_lblLeft textarea */
+    /*width: 100% !important;
     border: 0px solid #f4f4f4 !important;
     resize: horizontal;
     border-radius: 20px;
     float: left;
     background-color: #f4f4f4 !important;
-    font-family: Arial !important;
+    font-family: Arial !important;*/
 }
 
-.zcwf_coll_fld input[type=text],
-.zcwf_coll_fld textarea {
-    width: 100% !important;
+.zcwf_coll_fld input[type=text] {
+	
+	/*,.zcwf_coll_fld textarea*/
+   /* width: 100% !important;
     height: 20%;
     border: 0px solid #f4f4f4 !important;
     resize: horizontal;
     border-radius: 10px;
     float: left;
     background-color: #f4f4f4 !important;
-    font-family: Arial !important;
+    font-family: Arial !important;*/
 }
+
+
 
 .zcwf_lblLeft .zcwf_col_lab {
     width: 95%;
@@ -97,7 +138,7 @@ h1 {
     display: inline-block;
 }
 
-.zcwf_lblLeft .zcwf_col_fld_slt {
+/*.zcwf_lblLeft .zcwf_col_fld_slt {
     width: 100% !important;
     border: 1px solid #f4f4f4 !important;
     background: #f4f4f4 !important;
@@ -108,7 +149,7 @@ h1 {
     padding: 7px 15px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
-}
+}*/
 
 .zcwf_lblLeft .zcwf_row:after,
 .zcwf_lblLeft .zcwf_col_fld:after {
@@ -163,7 +204,7 @@ h1 {
     margin-left: 6px;
 }
 
-.zcwf_lblLeft .zcwf_button {
+/*.zcwf_lblLeft .zcwf_button {
     font-size: 14px;
     color: var(--baseColor);
     border: 1px solid #c0c6cc;
@@ -178,7 +219,7 @@ h1 {
     color: #fff !important;
     text-transform: capitalize !important;
     font-family: Arial !important;
-}
+}*/
 
 .zcwf_lblLeft .zcwf_tooltip_over {
     position: relative;
