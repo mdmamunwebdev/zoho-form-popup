@@ -126,7 +126,8 @@ h1 {
 
 .zcwf_lblLeft .zcwf_col_fld {
     float: left;
-    width: 98%;
+    width: 100%;	
+    /*width: 98%;*/
     padding: 0px 0px;
     position: relative;
     margin-top: 0px !important;
@@ -278,8 +279,8 @@ h1 {
     .zcwf_lblLeft .zcwf_col_fld_slt {
         width: 100% !important;
         border: 1px solid #f4f4f4 !important;
-        background: #f4f4f4 !important;
-        border-radius: 50% !important;
+        /*background: #f4f4f4 !important;*/
+        /*border-radius: 50% !important;*/
         font-size: 13px;
         float: left;
         resize: vertical;
@@ -290,7 +291,7 @@ h1 {
 
     #crmWebToEntityForm.zcwf_lblLeft * {
         box-sizing: border-box;
-        color: #000 !important;
+        /*color: #000 !important;*/
     }
 
     #crmWebToEntityForm * {
